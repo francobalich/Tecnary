@@ -6,3 +6,63 @@
 :root{
     
 }
+h1{
+    text-align: center;
+    padding: 20px;
+    font-size: 3rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.preg__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60%;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: #444;
+    color: white;
+    font-weight: bold;
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+
+.resp_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60%;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    padding: 15px 25px;
+}
+#resp1{
+    margin-top: 0px;
+}
+.resp__item{
+    background-color: antiquewhite;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.btnGenPreg{
+    margin: auto;
+    margin-top: 30px;
+    border: none;
+    border-radius: 15px;
+    background-color: grey;
+    color: white;
+    padding: 20px 50px;
+    font-size: 2rem;
+    font-weight: bold;
+}
