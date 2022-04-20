@@ -22,8 +22,11 @@ const iniciarServer = () => {
     });
 }
 io.on("connection", (socket) => {
-    socket.on("speak", (data) => {
-
+    socket.on("pregunta", (data) => {
+        if(data=="consulta"){
+            console.log("Se hizo la pregunta")
+            io.emit("respuesta","Se mostro el mensaje")
+        }
     })
 })
 iniciarServer()
