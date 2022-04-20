@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.17.3",
+    "fs": "0.0.1-security",
     "node": "^17.7.2",
     "nodemon": "^2.0.15",
     "socket.io": "^4.4.1",

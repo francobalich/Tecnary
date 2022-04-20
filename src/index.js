@@ -4,6 +4,13 @@ const port = 5000;
 const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
+const fs = require("fs");
+
+const preguntas = JSON.parse(
+  fs.readFileSync(
+    path.join(__dirname, "..", "src", "json", "preguntas.json")
+  )
+);
 
 const iniciarServer = () => {
     server.listen(port, () => {
@@ -25,8 +32,9 @@ io.on("connection", (socket) => {
     socket.on("pregunta", (data) => {
         if(data=="consulta"){
             console.log("Se hizo la pregunta")
-            io.emit("respuesta","Se mostro el mensaje")
+            io.emit("respuesta",preguntas)
         }
     })
 })
+
 iniciarServer()
