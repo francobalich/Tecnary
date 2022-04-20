@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,29 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Tecnary</title>
 </head>
+
 <body>
     <h1>Tecnary</h1>
     <div class="container">
         <div class="preg__container">
-            <p class="preg__item" id="pregunta">Pregunta</p>
+            <p class="preg__item" id="pregunta">-</p>
         </div>
-        
+
         <div class="resp_container">
-            <p class="resp__item" id="resp1">Respuesta1</p>
-            <p class="resp__item" id="resp2">Respuesta2</p>
-            <p class="resp__item" id="resp3">Respuesta3</p>
-            <p class="resp__item" id="resp4">Respuesta4</p>
+            <p class="resp__item" id="resp1">-</p>
+            <p class="resp__item" id="resp2">-</p>
+            <p class="resp__item" id="resp3">-</p>
+            <p class="resp__item" id="resp4">-</p>
         </div>
-    
+
         <input type="button" id="btnGenPreg" class="btnGenPreg" value="Generar pregunta">
+        <div id="msgBox" class="msgBox">
+            <p class="msg">¡Que comience el juego!</p>
+        </div>
     </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="./js/index.js"></script>
 </body>
+
 </html>

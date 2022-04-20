@@ -30,7 +30,6 @@ const iniciarServer = () => {
      return Math.floor(Math.random() * (3 - 0));
  }
 
-
 io.on("connection", (socket) => {
   socket.on("pregunta", (data) => {
     if (data == "consulta") {

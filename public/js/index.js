@@ -5,10 +5,15 @@ const respB = document.getElementById("resp2")
 const respC = document.getElementById("resp3")
 const respD = document.getElementById("resp4")
 const pregunta = document.getElementById("pregunta")
+const msgBox = document.getElementById("msgBox")
+
 let jsonData
 const genRandomNumer= (max)=>{
     return Math.floor(Math.random() * (max - 0));
 }
+window.onload = function() {
+    socket.emit("pregunta", "consulta");
+  };
 
 socket.on("connect", function (socket) {
   console.log("\u001b[" + 32 + "m" + `Server: CONECTADO` + "\u001b[0m");
@@ -42,9 +47,11 @@ btnGenPreg.addEventListener("click", (event) => {
 const validacion=(btn)=>{
     if(jsonData.respuesta==btn.textContent){
         console.log("Correcto")
+        msgBox.innerHTML=` <p class="msg correcto">¡Correcto!</p>`
     }
     else{
         console.log("Incorrecto")
+        msgBox.innerHTML=` <p class="msg incorrecto">¡Incorrecto!</p>`
     }
 }
 
