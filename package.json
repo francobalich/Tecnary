@@ -1,0 +1,30 @@
+{
+  "name": "tecnary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.3",
+    "node": "^17.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francobalich/Tecnary.git"
+  },
+  "keywords": [
+    "preguntas",
+    "respuestas",
+    "programacion"
+  ],
+  "author": "Franco Adrian Balich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francobalich/Tecnary/issues"
+  },
+  "homepage": "https://github.com/francobalich/Tecnary#readme"
+}
