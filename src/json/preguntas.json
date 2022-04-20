@@ -1,0 +1,26 @@
+{
+    "1": [
+        {
+            "pregunta": "¿Que es la ia?",
+            "respuesta":"Ia es el acronimo de inteligencia Artificial"
+        }
+    ],
+    "2": [
+        {
+            "pregunta": "¿Que es la robotica?",
+            "respuesta":"Es el campo de estudio donde se estudian los robots"
+        }
+    ],
+    "3": [
+        {
+            "pregunta": "¿Que es un sistema?",
+            "respuesta":"Un conjunto de partes interrelacionadas con un objetivo en comun"
+        }
+    ],
+    "4": [
+        {
+            "pregunta": "¿Que es POO?",
+            "respuesta":"POO es programacion orientada a objetos"
+        }
+    ]
+}
