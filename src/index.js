@@ -3,6 +3,7 @@ const path = require("path");
 const port = 5000;
 const app = express();
 const server = require("http").createServer(app);
+const io = require("socket.io")(server);
 
 const iniciarServer = () => {
     server.listen(port, () => {
@@ -20,4 +21,9 @@ const iniciarServer = () => {
       res.sendFile(__dirname + "../public/index.html");
     });
 }
+io.on("connection", (socket) => {
+    socket.on("speak", (data) => {
+
+    })
+})
 iniciarServer()
