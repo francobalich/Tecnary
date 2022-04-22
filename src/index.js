@@ -9,7 +9,9 @@ const fs = require("fs");
 const preguntas = JSON.parse(
   fs.readFileSync(path.join(__dirname, "..", "src", "json", "preguntas.json"))
 );
-
+const puntajes = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "..", "src", "json", "lista.json"))
+);
 const iniciarServer = () => {
   server.listen(port, () => {
     console.log(
@@ -49,6 +51,20 @@ io.on("connection", (socket) => {
       io.emit("respuesta", jsonToSend);
     }
   });
+  socket.on("user",(data)=>{
+    if(puntajes[data]!=undefined){
+      socket.emit("puntaje",puntajes[data])
+    }
+  })
+  socket.on("refreshPoints",(data)=>{
+    console.log(data)
+    puntajes[String(data[0])]=String(data[1])
+    fs.writeFile(path.join(__dirname, "..", "src", "json", "lista.json"), JSON.stringify(puntajes), err => {
+      if (err) {
+        console.error(err)
+        return
+      }
+    })
+  })
 });
-
 iniciarServer();
