@@ -28,7 +28,7 @@ const iniciarServer = () => {
 };
 
  const genRandomNumer= ()=>{
-     return Math.floor(Math.random() * (3 - 0));
+     return Math.floor(Math.random() * (8 - 0));
  }
 
 io.on("connection", (socket) => {

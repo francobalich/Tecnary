@@ -1,7 +1,7 @@
 {
     "0": {
         "pregunta": "¿Qué significa IA?",
-        "respuesta": "Una IA es el acronimo de Inteligencia Artificial."
+        "respuesta": "Es el acronimo de Inteligencia Artificial."
     },
     "1": {
         "pregunta": "¿Qué es la robótica?",
@@ -13,7 +13,7 @@
     },
     "3": {
         "pregunta": "¿Que es POO?",
-        "respuesta": "POO es programacion orientada a objetos."
+        "respuesta": "Es programacion orientada a objetos."
     },
     "4": {
         "pregunta": "¿Qué es una variable?",
@@ -21,11 +21,11 @@
     },
     "5": {
         "pregunta": "¿Qué es un robot?",
-        "respuesta": "Un robot es una maquina o programa reprogramble que es capaz de realizar un tarea por si solo para la que fue programado.."
+        "respuesta": "Es una maquina o programa reprogramble que es capaz de realizar un tarea por si solo para la que fue programado.."
     },
     "6": {
         "pregunta": "¿Qué es un base de datos?",
-        "respuesta": "Una base de datos es el lugar de almacenamiento de datos relacionales y estructurados."
+        "respuesta": "Es el lugar de almacenamiento de datos relacionales y estructurados."
     },
     "7": {
         "pregunta": "¿Qué es el desarrollo web?",
@@ -33,6 +33,6 @@
     },
     "8": {
         "pregunta": "¿Qué es un bug?",
-        "respuesta": "Un bug como se le dicen a los errores que suceden en programacion."
+        "respuesta": "Es como se le dicen a los errores que suceden en programacion."
     }
 }
