@@ -6,6 +6,12 @@ const respC = document.getElementById("resp3")
 const respD = document.getElementById("resp4")
 const pregunta = document.getElementById("pregunta")
 const msgBox = document.getElementById("msgBox")
+const points = document.getElementById("points")
+const txtSaveUser = document.getElementById("user")
+const btnSaveUser = document.getElementById("saveUser")
+
+let user="Anonimo"
+let puntos=0
 
 let jsonData
 const genRandomNumer= (max)=>{
@@ -52,13 +58,16 @@ const validacion=(btn)=>{
     if(jsonData.respuesta==btn.textContent){
         console.log("Correcto")
         genPreg()
+        puntos+=10
         msgBox.innerHTML=` <p class="msg correcto">¡Correcto!</p>`
     }
     else{
         console.log("Incorrecto")
         genPreg()
+        puntos-=10
         msgBox.innerHTML=` <p class="msg incorrecto">¡Incorrecto!</p>`
     }
+    points.innerText=`Puntos de ${user}: ${puntos}`
 }
 
 respA.addEventListener("click", (event) => {
@@ -72,4 +81,8 @@ respC.addEventListener("click", (event) => {
 })
 respD.addEventListener("click", (event) => {
     validacion(respD)
+})
+btnSaveUser.addEventListener("click", (event) => {
+    user=txtSaveUser.value
+    console.log(user)
 })
