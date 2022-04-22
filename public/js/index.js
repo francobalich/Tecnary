@@ -40,17 +40,23 @@ socket.on("respuesta", (data) => {
   respD.innerText=respuestasDesorganizadas[3]
 });
 
-btnGenPreg.addEventListener("click", (event) => {
+const genPreg=()=>{
     socket.emit("pregunta", "consulta");
+}
+
+btnGenPreg.addEventListener("click", (event) => {
+    genPreg()
 });
 
 const validacion=(btn)=>{
     if(jsonData.respuesta==btn.textContent){
         console.log("Correcto")
+        genPreg()
         msgBox.innerHTML=` <p class="msg correcto">¡Correcto!</p>`
     }
     else{
         console.log("Incorrecto")
+        genPreg()
         msgBox.innerHTML=` <p class="msg incorrecto">¡Incorrecto!</p>`
     }
 }
