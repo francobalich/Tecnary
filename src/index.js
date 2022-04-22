@@ -26,6 +26,7 @@ const iniciarServer = () => {
     res.sendFile(__dirname + "../public/index.html");
   });
 };
+
  const genRandomNumer= ()=>{
      return Math.floor(Math.random() * (3 - 0));
  }
@@ -37,7 +38,7 @@ io.on("connection", (socket) => {
       let numB = genRandomNumer()
       let numC = genRandomNumer()
       let numD = genRandomNumer()
-      console.log("Se hizo la pregunta");
+      //console.log("Se hizo la pregunta");
       let jsonDemo = {
         
           respuestaFalsas:
