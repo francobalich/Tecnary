@@ -8,6 +8,7 @@
     "fs": "0.0.1-security",
     "node": "^17.7.2",
     "nodemon": "^2.0.15",
+    "simple-json-db": "^2.0.0",
     "socket.io": "^4.4.1",
     "socket.io-client": "^4.4.1"
   },
