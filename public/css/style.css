@@ -23,14 +23,14 @@ body{
     background-size: 100%;
     display: flex;
 }
-.userContainer{
+.container{
     display: flex;
     flex-direction: column;
     margin: auto;
     width: 700px;
     border-radius: 30px;
     background-color: var(--negro);
-    padding:50px 70px ;
+    padding:40px 70px ;
     box-shadow: 4px 6px 2px var(--celeste);
     align-items: center;
 }
@@ -42,14 +42,18 @@ body{
     width: 100%;
     border: none;
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
 }
 .btn:hover{
     box-shadow: inset 3px 6px 2px rgba(0, 0, 0, 0.7);
 }
-.userContainer img{
+.container img{
     width: 210px;
 }
-.userContainer p{
+h1{
     color: var(--blanco);
     margin-top: 10px;
     font-size: 40px;
@@ -63,6 +67,7 @@ body{
 .btnStart{
     background-color: var(--blanco);
 }
+
 .btnSave{
     padding: 10px 15px;
     font-size: 1.3rem;
@@ -79,74 +84,47 @@ body{
 .btnSave:hover{
     background-color: #222;
 }
-h1{
-    text-align: center;
-    padding: 20px;
-    font-size: 3rem;
+.textSimple{
+    font-weight: normal;
+    font-size: 16px;
 }
-.msgBox{
 
-    margin: auto;
-    margin-top:30px;
-    display: flex;
+.msgBox{
+    position: absolute;
+    color: var(--blanco);
+    text-align: center;
+    top: 20px;
+    width: 100%;
+    display: none;
 }
 .msg{
     font-weight: bold;
     font-size: 1.5rem;
     margin: auto;
 }
+.msgPoints{
+    margin-top: 40px;
+    color: var(--blanco);
+}
 .correcto{
-    color: green;
-    font-size: 2.5rem;
+    background-color: var(--verdeAgua);
 }
 .incorrecto{
-    color: red;
-    font-size: 2.5rem;
+    background-color: var(--rojoApagado);
 }
 .container{
     display: flex;
     flex-direction: column;
 }
-.preg__container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 60%;
-    margin: auto;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-color: #222;
-    color: white;
-    font-weight: bold;
-    padding: 15px 25px;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
 
-
-.resp_container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 60%;
-    margin: auto;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-color: #bbb;
-    padding: 15px 25px;
+.preg__item{
+    background-color: var(--blanco);
+    color: var(--negro);
+    margin-bottom: 20px;
+    height: 180px;
 }
 #resp1{
     margin-top: 0px;
-}
-.resp__item{
-    background-color: antiquewhite;
-    border: 1px solid black;
-    display: inline-block;
-    padding: 15px 20px;
-    border-radius: 10px;
-    margin-top: 15px;
-    -webkit-box-shadow: 3px 6px 15px -4px rgba(0,0,0,0.5); 
-    box-shadow: 3px 6px 15px -4px rgba(0,0,0,0.5);cursor: pointer;
 }
 .btnGenPreg{
     cursor: pointer;
@@ -161,8 +139,4 @@ h1{
     font-weight: bold;
     -webkit-box-shadow: 3px 6px 15px -4px rgba(0,0,0,0.5); 
     box-shadow: 3px 6px 15px -4px rgba(0,0,0,0.5);
-}
-.btnGenPreg:hover,.resp__item:hover,.btnSave:hover{
-    -webkit-box-shadow: inset 3px 6px 15px -4px rgba(0,0,0,0.5); 
-    box-shadow: inset 3px 6px 15px -4px rgba(0,0,0,0.5);
 }

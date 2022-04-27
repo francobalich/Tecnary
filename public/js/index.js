@@ -1,5 +1,4 @@
 const socket = io("http://localhost:5000/");
-const btnGenPreg = document.getElementById("btnGenPreg");
 const respA = document.getElementById("resp1");
 const respB = document.getElementById("resp2");
 const respC = document.getElementById("resp3");
@@ -55,24 +54,18 @@ socket.on("respuesta", (data) => {
 const genPreg = () => {
   socket.emit("pregunta", "consulta");
 };
-
-btnGenPreg.addEventListener("click", (event) => {
-  genPreg();
-});
-
 const validacion = (btn) => {
   if (jsonData.respuesta == btn.textContent) {
     console.log("Correcto");
-    genPreg();
     puntos += 10;
     audios = new Audio("../sounds/correcto.mp3");
+    btn.className += " correcto";
     msgBox.innerHTML = ` <p class="msg correcto">¡Correcto!</p>`;
   } else {
     console.log("Incorrecto");
-    genPreg();
     puntos -= 10;
     audios = new Audio("../sounds/error.mp3");
-
+    btn.className += " incorrecto";
     msgBox.innerHTML = ` <p class="msg incorrecto">¡Incorrecto!</p>`;
   }
   audios.play();
@@ -81,6 +74,8 @@ const validacion = (btn) => {
   socket.emit("refreshPoints", puntosObj);
   points.innerText = `Puntos de ${user}: ${puntos}`;
   setTimeout(() => {
+    genPreg();
+    btn.className="btn textSimple"
     audios.pause();
   }, 1000);
 };
