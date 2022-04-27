@@ -13,8 +13,8 @@
     <h1>Tecnary</h1>
     <div class="container">
         <div class="userContainer">
-            <input type="text" name="" id="user">
-            <input type="button" id="saveUser" value="Guardar">
+            <input class="txtUser" type="text" name="" id="user">
+            <input class="btnSave" type="button" id="saveUser" value="Guardar">
         </div>
         
         <div class="preg__container">
@@ -28,11 +28,11 @@
             <p class="resp__item" id="resp4">-</p>
         </div>
 
-        <input type="button" id="btnGenPreg" class="btnGenPreg" value="Generar pregunta">
+        <input type="button" id="btnGenPreg" class="btnGenPreg" value="Cambiar pregunta">
         <div id="msgBox" class="msgBox">
-            <p class="msg">¡Que comience el juego!</p>
+            <p class="msg">¡¡Que comience el juego!!</p>
         </div>
-        <p id="points" class="msg">Puntos:</p>
+        <p id="points" class="msg">Puntos de Anonimo: 0</p>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
