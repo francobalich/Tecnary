@@ -5,12 +5,10 @@ const respB = document.getElementById("resp2");
 const respC = document.getElementById("resp3");
 const respD = document.getElementById("resp4");
 const pregunta = document.getElementById("pregunta");
+
 const msgBox = document.getElementById("msgBox");
 const points = document.getElementById("points");
-const txtSaveUser = document.getElementById("user");
-const btnSaveUser = document.getElementById("saveUser");
 
-let user = "Anonimo";
 let puntos = 0;
 let audios;
 
@@ -19,16 +17,23 @@ const genRandomNumer = (max) => {
   return Math.floor(Math.random() * (max - 0));
 };
 window.onload = function () {
+  socket.emit("usuario","consulta");
   socket.emit("pregunta", "consulta");
 };
-
-socket.on("connect", function (socket) {
-  console.log("\u001b[" + 32 + "m" + `Server: CONECTADO` + "\u001b[0m");
+socket.on("usuarioRespuesta", (data) => {
+  user = data;
+  console.log(user)
+  socket.emit("userPoints",user);
 });
+socket.on("connect", function (socket) {
+  console.log("\u001b[" + 32 + "m" + `Game: CONECTADO` + "\u001b[0m");
+});
+
 socket.on("puntaje", (data) => {
   puntos = parseInt(data);
   points.innerText = `Puntos de ${user}: ${puntos}`;
 });
+
 socket.on("respuesta", (data) => {
   jsonData = data;
 
@@ -74,9 +79,9 @@ const validacion = (btn) => {
     msgBox.innerHTML = ` <p class="msg incorrecto">¡Incorrecto!</p>`;
   }
   audios.play();
-  let puntosObj=[user,puntos]
-  
-  socket.emit("refreshPoints",puntosObj)
+  let puntosObj = [user, puntos];
+
+  socket.emit("refreshPoints", puntosObj);
   points.innerText = `Puntos de ${user}: ${puntos}`;
   setTimeout(() => {
     audios.pause();
@@ -94,9 +99,4 @@ respC.addEventListener("click", (event) => {
 });
 respD.addEventListener("click", (event) => {
   validacion(respD);
-});
-btnSaveUser.addEventListener("click", (event) => {
-  user = txtSaveUser.value;
-  socket.emit("user", user);
-  ///console.log(user);
 });

@@ -8,6 +8,7 @@ const fs = require("fs");
 const JSONdb = require("simple-json-db");
 const dbPuntajes = new JSONdb("./src/json/lista.json");
 const dbPreguntas = new JSONdb("./src/json/preguntas.json");
+let user
 
 const iniciarServer = () => {
   server.listen(port, () => {
@@ -16,7 +17,10 @@ const iniciarServer = () => {
   var publicPath = path.resolve(__dirname, "../public");
   app.use(express.static(publicPath));
   app.get("/", function (req, res) {
-    res.sendFile(__dirname + "../public/index.html");
+    res.sendFile('main.html', {root: 'public'});
+  });
+  app.get("/game", function (req, res) {
+    res.sendFile('game.html', {root: 'public'});
   });
 };
 
@@ -42,14 +46,21 @@ io.on("connection", (socket) => {
       io.emit("respuesta", jsonToSend);
     }
   });
-  socket.on("user", (data) => {
+  socket.on("userPoints", (data) => {
     if (dbPuntajes.has(data)) {
       socket.emit("puntaje", dbPuntajes.get(data));
     }
   });
+  socket.on("saveUser", (data) => {
+    user=data
+    console.log(data)
+  });
   socket.on("refreshPoints", (data) => {
     console.log(data);
     dbPuntajes.set(data[0], data[1]);
+  });
+  socket.on("usuario", (data) => {
+    socket.emit("usuarioRespuesta",user)
   });
 });
 iniciarServer();

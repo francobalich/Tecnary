@@ -1,42 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Tecnary</title>
-</head>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Tecnary</title>
+    </head>
 <body>
-    <h1>Tecnary</h1>
-    <div class="container">
-        <div class="userContainer">
-            <input class="txtUser" type="text" name="" id="user">
-            <input class="btnSave" type="button" id="saveUser" value="Guardar">
-        </div>
-        
-        <div class="preg__container">
-            <p class="preg__item" id="pregunta">-</p>
-        </div>
-
-        <div class="resp_container">
-            <p class="resp__item" id="resp1">-</p>
-            <p class="resp__item" id="resp2">-</p>
-            <p class="resp__item" id="resp3">-</p>
-            <p class="resp__item" id="resp4">-</p>
-        </div>
-
-        <input type="button" id="btnGenPreg" class="btnGenPreg" value="Cambiar pregunta">
-        <div id="msgBox" class="msgBox">
-            <p class="msg">¡¡Que comience el juego!!</p>
-        </div>
-        <p id="points" class="msg">Puntos de Anonimo: 0</p>
+    <div class="userContainer">
+        <input class="txtUser" type="text" name="" id="user">
+        <input class="btnSave" type="button" id="saveUser" value="Guardar">
     </div>
-
     <script src="/socket.io/socket.io.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/inicio.js"></script>
 </body>
-
 </html>
