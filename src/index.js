@@ -8,7 +8,7 @@ const fs = require("fs");
 const JSONdb = require("simple-json-db");
 const dbPuntajes = new JSONdb("./src/json/lista.json");
 const dbPreguntas = new JSONdb("./src/json/preguntas.json");
-let user
+let user;
 
 const iniciarServer = () => {
   server.listen(port, () => {
@@ -17,10 +17,10 @@ const iniciarServer = () => {
   var publicPath = path.resolve(__dirname, "../public");
   app.use(express.static(publicPath));
   app.get("/", function (req, res) {
-    res.sendFile('main.html', {root: 'public'});
+    res.sendFile("main.html", { root: "public" });
   });
   app.get("/game", function (req, res) {
-    res.sendFile('game.html', {root: 'public'});
+    res.sendFile("game.html", { root: "public" });
   });
 };
 
@@ -34,7 +34,6 @@ io.on("connection", (socket) => {
       let numB = genRandomNumer();
       let numC = genRandomNumer();
       let numD = genRandomNumer();
-      //console.log("Se hizo la pregunta");
       let jsonDemo = {
         respuestaFalsas: [
           `${dbPreguntas.get(numB).respuesta}`,
@@ -52,15 +51,13 @@ io.on("connection", (socket) => {
     }
   });
   socket.on("saveUser", (data) => {
-    user=data
-    console.log(data)
+    user = data;
   });
   socket.on("refreshPoints", (data) => {
-    console.log(data);
     dbPuntajes.set(data[0], data[1]);
   });
   socket.on("usuario", (data) => {
-    socket.emit("usuarioRespuesta",user)
+    socket.emit("usuarioRespuesta", user);
   });
 });
 iniciarServer();

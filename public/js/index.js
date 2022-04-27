@@ -17,13 +17,12 @@ const genRandomNumer = (max) => {
   return Math.floor(Math.random() * (max - 0));
 };
 window.onload = function () {
-  socket.emit("usuario","consulta");
+  socket.emit("usuario", "consulta");
   socket.emit("pregunta", "consulta");
 };
 socket.on("usuarioRespuesta", (data) => {
   user = data;
-  console.log(user)
-  socket.emit("userPoints",user);
+  socket.emit("userPoints", user);
 });
 socket.on("connect", function (socket) {
   console.log("\u001b[" + 32 + "m" + `Game: CONECTADO` + "\u001b[0m");
@@ -40,7 +39,6 @@ socket.on("respuesta", (data) => {
   let respuestasList = [data.respuesta];
   respuestasList = respuestasList.concat(data.respuestaFalsas);
   pregunta.innerText = data.pregunta;
-  //console.log(respuestasList);
   let repeticiones = respuestasList.length;
   let respuestasDesorganizadas = [];
   for (let i = 0; i < repeticiones; i++) {
@@ -48,7 +46,6 @@ socket.on("respuesta", (data) => {
     respuestasDesorganizadas.push(respuestasList[numRandom]);
     respuestasList.splice(numRandom, 1);
   }
-  //console.log(respuestasDesorganizadas)
   respA.innerText = respuestasDesorganizadas[0];
   respB.innerText = respuestasDesorganizadas[1];
   respC.innerText = respuestasDesorganizadas[2];
